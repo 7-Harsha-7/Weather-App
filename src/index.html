@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="syle.css">
+</head>
+<body>
+    <div class="upper">
+        <h1 class="onpic"><span id="hours"></span> : <span id="minutes"></span></h1>
+        <p class="onpic2"><span id="weekname"></span>, <span id="month"></span> <span id="date"></span>, <span id="year"></span></p>
+        <img src="bg.jpg">
+    </div>
+    <div class="lower">
+    <div class="lower-left">
+        <div class="temp">
+            <span class="descirption"></span>
+            <span class="temperature"></span>
+        </div>
+       
+    </div>  
+    </div>
+
+    <script>
+       const d = new Date();
+       document.getElementById("hours").innerHTML = d.getHours();
+       document.getElementById("minutes").innerHTML = d.getMinutes();
+
+        const days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+
+        const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+
+        let day = days[d.getDay()];
+        document.getElementById("weekname").innerHTML = day;
+
+        const month = new Date();
+        let month_number = months[month.getMonth()];
+        document.getElementById("month").innerHTML = month_number;
+
+        const date = new Date();
+        document.getElementById("date").innerHTML = date.getDate();
+
+        const year = new Date();
+        document.getElementById("year").innerHTML = year.getFullYear();
+    </script>
+        
+        
+    
+</body>
+</html>
